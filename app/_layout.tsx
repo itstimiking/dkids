@@ -1,4 +1,6 @@
-import { Stack } from "expo-router";
+import { MaterialIcons } from "@expo/vector-icons";
+import { Stack, router } from "expo-router";
+import { Pressable } from "react-native";
 
 export default function RootLayout() {
   return (
@@ -10,7 +12,14 @@ export default function RootLayout() {
         headerTitleStyle: {
           color: '#fff',
         },
-        headerTitleAlign: 'center'
+        headerTitleAlign: 'center',
+        headerLeft:(route)=>(
+          router.canGoBack() ?
+          <Pressable onPress={()=>router.back()}>
+            <MaterialIcons name="arrow-back-ios" size={24} color="black" style={{color:'#fff'}} />
+          </Pressable> : <></>
+        ),
+        headerBackVisible:false
       }}
     >
       <Stack.Screen
