@@ -10,6 +10,7 @@ export default function Index() {
     >
       <View style={styles.tabarea}>
         <View style={styles.tabsbuttonarea}>
+
           <Pressable
             style={[
               styles.tabs,
@@ -17,15 +18,50 @@ export default function Index() {
             ]}
             onPress={() => setTab(0)}
           >
-            <Text
-              style={[
-                styles.tabsText,
-                tab == 0 ? styles.tabsActiveText : {}
-              ]}
-            >
-              Sign up
-            </Text>
+            <View
+              style={{
+                height: 0,
+                width: 0,
+                backgroundColor: 'transparent',
+                borderRightWidth: 20,
+                borderBottomWidth: 0,
+                borderTopWidth: 40,
+                borderLeftWidth: 0,
+                borderRightColor: 'white',
+                borderTopColor: 'transparent',
+                opacity: tab==0 ? 1 : 0,
+                marginLeft:-14
+              }}
+            />
+            <View style={styles.tabsinner}>
+              <Text
+                style={[
+                  styles.tabsText,
+                  tab == 0 ? styles.tabsActiveText : {}
+                ]}
+              >
+                Sign up
+              </Text>
+
+            </View>
+
+            <View
+              style={{
+                height: 0,
+                width: 0,
+                backgroundColor: 'transparent',
+                borderLeftWidth: 20,
+                borderBottomWidth: 0,
+                borderTopWidth: 40,
+                borderRightWidth: 0,
+                borderLeftColor: 'white',
+                borderTopColor: 'transparent',
+                opacity: tab==0 ? 1 : 0,
+                marginRight:-14
+              }}
+            />
           </Pressable>
+
           <Pressable
             style={[
               styles.tabs,
@@ -33,14 +69,48 @@ export default function Index() {
             ]}
             onPress={() => setTab(1)}
           >
-            <Text
-              style={[
-                styles.tabsText,
-                tab == 1 ? styles.tabsActiveText : {}
-              ]}
-            >
-              Login
-            </Text>
+            <View
+              style={{
+                height: 0,
+                width: 0,
+                backgroundColor: 'transparent',
+                borderRightWidth: 20,
+                borderBottomWidth: 0,
+                borderTopWidth: 40,
+                borderLeftWidth: 0,
+                borderRightColor: 'white',
+                borderTopColor: 'transparent',
+                opacity: tab==1 ? 1 : 0,
+                marginLeft:-14
+              }}
+            />
+            <View style={styles.tabsinner}>
+              <Text
+                style={[
+                  styles.tabsText,
+                  tab == 1 ? styles.tabsActiveText : {}
+                ]}
+              >
+                Login
+              </Text>
+
+            </View>
+
+            <View
+              style={{
+                height: 0,
+                width: 0,
+                backgroundColor: 'transparent',
+                borderLeftWidth: 20,
+                borderBottomWidth: 0,
+                borderTopWidth: 40,
+                borderRightWidth: 0,
+                borderLeftColor: 'white',
+                borderTopColor: 'transparent',
+                opacity: tab==1 ? 1 : 0,
+                marginRight:-14
+              }}
+            />
           </Pressable>
         </View>
         <View
@@ -51,7 +121,7 @@ export default function Index() {
               <View
                 style={styles.tabsContent}
               >
-                <View style={{gap:5}}>
+                <View style={{ gap: 5 }}>
                   <Text style={styles.text}>
                     Enter your mobile number or email address
                   </Text>
@@ -77,7 +147,7 @@ export default function Index() {
               <View
                 style={styles.tabsContent}
               >
-                <View style={{gap:5}}>
+                <View style={{ gap: 5 }}>
                   <Text style={styles.text}>
                     Email
                   </Text>
@@ -87,7 +157,7 @@ export default function Index() {
                   />
                 </View>
 
-                <View style={{gap:5}}>
+                <View style={{ gap: 5 }}>
                   <Text style={styles.text}>
                     Password
                   </Text>
@@ -130,19 +200,24 @@ const styles = StyleSheet.create({
   },
   tabsbuttonarea: {
     width: '100%',
-    height: 50,
+    height: 40,
     flexDirection: 'row'
   },
   tabs: {
     flex: 1,
     height: '100%',
-    alignItems: 'center',
-    justifyContent: 'center',
+    flexDirection: 'row',
+    marginHorizontal:10
+  },
+  tabsinner:{
+    flex:1,
+    justifyContent:'center',
+    alignItems:'center'
   },
   tabsActive: {
-    borderTopLeftRadius: 40,
-    borderTopRightRadius: 40,
-    backgroundColor: 'white'
+    backgroundColor: 'white',
+    borderTopLeftRadius: 13,
+    borderTopRightRadius: 13,
   },
   tabsText: {
     color: 'grey'
@@ -152,7 +227,7 @@ const styles = StyleSheet.create({
   },
   tabsContentContainer: {
     flex: 1,
-    backgroundColor: 'white'
+    backgroundColor: 'white',
   },
   tabsContent: {
     paddingHorizontal: 24,

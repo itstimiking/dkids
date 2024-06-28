@@ -1,4 +1,4 @@
-import { MaterialIcons } from "@expo/vector-icons";
+import { AntDesign } from "@expo/vector-icons";
 import { Stack, router } from "expo-router";
 import { Pressable } from "react-native";
 
@@ -16,7 +16,7 @@ export default function RootLayout() {
         headerLeft:(route)=>(
           router.canGoBack() ?
           <Pressable onPress={()=>router.back()}>
-            <MaterialIcons name="arrow-back-ios" size={24} color="black" style={{color:'#fff'}} />
+            <AntDesign name="arrowleft" size={24} color="#fff" />
           </Pressable> : <></>
         ),
         headerBackVisible:false
