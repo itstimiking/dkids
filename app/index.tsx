@@ -43,18 +43,20 @@ const styles = StyleSheet.create({
   },
   content: {
     flex:1,
+    width:'100%',
+    justifyContent:'center',
     padding: 24,
     gap: 20
   },
   button: {
     backgroundColor: '#665FD5',
-    padding: 12,
+    paddingHorizontal: 25,
+    paddingVertical: 12,
     borderRadius: 20,
-    alignItems: 'center',
-    justifyContent:'center'
   },
   linkText: {
     color: '#fff',
-    fontWeight: '800'
+    fontWeight: '800',
+    alignSelf:'center',
   }
 })
